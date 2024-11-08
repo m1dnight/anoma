@@ -1,7 +1,9 @@
 name: Push on main or next
 run-name: Push on main or next
 
-on: [push]
+on:
+  push:
+    branches: [ "main", "next" ]
 
 jobs:
   compile:

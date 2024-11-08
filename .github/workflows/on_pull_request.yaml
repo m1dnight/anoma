@@ -3,8 +3,7 @@ run-name: Pull request
 
 on:
   pull_request:
-    branches: [ "base" ]
-
+    branches: ["base"]
 
 jobs:
   try_merge:

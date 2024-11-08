@@ -3,7 +3,7 @@ run-name: Push on main or next
 
 on:
   push:
-    branches: [ "main", "next" ]
+    branches: ["main", "next"]
 
 jobs:
   compile:

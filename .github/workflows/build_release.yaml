@@ -53,14 +53,11 @@ jobs:
             --title ${{ github.ref_name }}             \
             --repo ${{ github.repository }}
 
-        #   #---------------------------------------------------------------------------
-        #   # Publish releases
-
-        #   - name: publish client release
-        #     shell: bash
-        #     env:
-        #       GH_TOKEN: ${{ inputs.github_token }}
-        #     run: |
-        #       gh release upload ${{ inputs.release_name }} \
-        #       -- clobber                                   \
-        #       apps/anoma_client/anoma_client
+      # - name: publish client release
+      #   shell: bash
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     gh release upload ${{ github.ref_name }} \
+      #     --clobber                                \
+      #     apps/anoma_client/anoma_client

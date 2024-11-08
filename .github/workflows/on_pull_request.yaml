@@ -8,7 +8,7 @@ jobs:
   try_merge:
     uses: ./.github/workflows/try_merge.yaml
     with:
-      merge_with: "main"
+      merge_with: "next"
 
   compile:
     strategy:

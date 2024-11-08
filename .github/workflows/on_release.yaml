@@ -1,16 +1,16 @@
-name: Push
-run-name: Push
+name: Release
+run-name: Release
 
 on:
-    push:
-      tags:
-        - v*
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   try_merge:
     uses: ./.github/workflows/try_merge.yaml
     with:
-      merge_with: "main"
+      merge_with: "next"
 
   compile:
     strategy:

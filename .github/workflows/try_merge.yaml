@@ -6,7 +6,7 @@ on:
         required: true
         type: string
 jobs:
-  compile-docs:
+  try-merge:
     runs-on: ubuntu-latest
     steps:
       - name: checkout the repository

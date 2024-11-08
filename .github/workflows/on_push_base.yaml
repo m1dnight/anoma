@@ -1,8 +1,8 @@
 name: Push on base
 run-name: Push on base
 on:
-    push:
-      branches: [ "base" ]
+  push:
+    branches: ["base"]
 
 jobs:
   compile:

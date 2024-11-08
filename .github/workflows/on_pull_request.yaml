@@ -1,8 +1,8 @@
 name: Pull request
 run-name: Pull request
 on:
-    pull_request:
-      branches: [ "base" ]
+  pull_request:
+    branches: ["base"]
 
 jobs:
   try_merge:

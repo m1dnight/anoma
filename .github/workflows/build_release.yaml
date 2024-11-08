@@ -53,11 +53,15 @@ jobs:
             --title ${{ github.ref_name }}             \
             --repo ${{ github.repository }}
 
-      # - name: publish client release
-      #   shell: bash
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     gh release upload ${{ github.ref_name }} \
-      #     --clobber                                \
-      #     apps/anoma_client/anoma_client
+      - name: build client release 
+        shell: bash
+        run: MIX_ENV=${{ inputs.mix-env }} mix do --app anoma_client escript.build
+        
+      - name: publish client release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ github.ref_name }} \
+          --clobber                                \
+          apps/anoma_client/anoma_client

@@ -7,7 +7,7 @@
 # 2. Run the linter on the source code.
 
 name: Push
-run-name: Push on ${{ github.head_ref }}
+run-name: Push on `${{ github.head_ref }}`
 on:
   push:
     branches:

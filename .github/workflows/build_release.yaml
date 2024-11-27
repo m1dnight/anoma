@@ -22,9 +22,6 @@ on:
       release_name:
         required: true
         type: string
-    secrets:
-      github_token:
-        required: true
 jobs:
   build_release:
     runs-on: ubuntu-latest

@@ -76,5 +76,3 @@ jobs:
       elixir-version: "1.17"
       otp-version: "27.1"
       release_name: ${{ github.ref_name }}
-    secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}

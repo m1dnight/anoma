@@ -13,7 +13,7 @@
 # 5. Make a release on GitHub
 
 name: Release
-run-name: Release `${{ github.ref}}
+run-name: Release tag `${{ github.ref_name }}` tag
 
 on:
   push:

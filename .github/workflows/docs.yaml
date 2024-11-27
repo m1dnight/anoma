@@ -33,7 +33,7 @@ jobs:
           path: |
             ${{ github.workspace }}/deps
             ${{ github.workspace }}/_build
-          key: ${{ runner.os }}-build-${{ inputs.mix-env }}-${{ inputs.elixir-version }}-${{ inputs.otp-version }}-${{ hashFiles('mix.lock') }}
+          key: ${{ runner.os }}-build-${{ inputs.mix-env }}-${{ hashFiles('mix.lock') }}
 
       - name: setup elixir
         uses: ./.github/actions/elixir_setup
@@ -62,7 +62,7 @@ jobs:
           path: |
             ${{ github.workspace }}/deps
             ${{ github.workspace }}/_build
-          key: ${{ runner.os }}-build-${{ inputs.mix-env }}-${{ inputs.elixir-version }}-${{ inputs.otp-version }}-${{ hashFiles('mix.lock') }}
+          key: ${{ runner.os }}-build-${{ inputs.mix-env }}-${{ hashFiles('mix.lock') }}
 
       - name: setup elixir
         uses: ./.github/actions/elixir_setup

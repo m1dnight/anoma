@@ -9,3 +9,4 @@ runs:
     - name: install apt packages
       shell: bash
       run: sudo apt-get install -y libsodium-dev protobuf-compiler
+      run: protoc --version

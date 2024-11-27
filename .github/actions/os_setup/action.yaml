@@ -1,5 +1,8 @@
-name: install apt packages
-description: install apt packages
+# OS Setup
+#
+# I install the necessary packages at the OS level.
+name: OS Setup
+description: OS Setup
 runs:
   using: "composite"
   steps:

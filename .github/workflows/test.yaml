@@ -1,4 +1,13 @@
-name: Run tests
+# Test
+#
+# I run the testsuite on the code base.
+# If any tests fail, I fail.
+#
+# I take three parameters:
+# - mix-env: The environment to build the release for.
+# - elixir-version: The version of Elixir to use.
+# - otp-version: The version of OTP to use.
+name: Test
 on:
   workflow_call:
     inputs:

@@ -1,4 +1,18 @@
-name: Linting workflow
+# Lint
+#
+# I lint the codebase.
+#
+# I take three parameters:
+# - mix-env: The environment to build the release for.
+# - elixir-version: The version of Elixir to use.
+# - otp-version: The version of OTP to use.
+#
+# Linting means the following.
+# - Check if the code if formatted
+# - Check if the code has trailing whitespaces
+# - Check if the code has any issues reported by credo
+# - Check if the code has any issues reported by dialyzer
+name: Lint
 on:
   workflow_call:
     inputs:

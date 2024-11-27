@@ -1,8 +1,17 @@
-name: Push on base
-run-name: Push on base
+# Push Base
+#
+# This is the pipeline that will run for every commit pushed to the base branch.
+#
+# The pipeline does the following.
+# 1. Compile the source code for all environments (dev, test, prod)
+# 2. Run the linter on the source code.
+# 3. Run the entire test suite
+
+name: Push Base
+run-name: Push Base
 on:
-    push:
-      branches: [ "base" ]
+  push:
+    branches: ["base"]
 
 jobs:
   compile:

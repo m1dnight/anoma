@@ -1,4 +1,12 @@
-name: Compile workflow
+# Compile
+#
+# I compile the Elixir project.
+#
+# I take three parameters:
+# - mix-env: The environment to compile the project for.
+# - elixir-version: The version of Elixir to use.
+# - otp-version: The version of OTP to use.
+name: Compile
 on:
   workflow_call:
     inputs:
@@ -11,9 +19,6 @@ on:
       otp-version:
         required: true
         type: string
-    secrets:
-      token:
-        required: false
 jobs:
   compile:
     runs-on: ubuntu-latest

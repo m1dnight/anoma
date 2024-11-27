@@ -1,4 +1,13 @@
-name: Generate docs
+# Generate Docs
+#
+# I generate the documentation for the project.
+# I compile the documentation and publish it on GitHub pages.
+#
+# I take three parameters:
+# - mix-env: The environment to build the release for.
+# - elixir-version: The version of Elixir to use.
+# - otp-version: The version of OTP to use.
+name: Generate Docs
 on:
   workflow_call:
     inputs:

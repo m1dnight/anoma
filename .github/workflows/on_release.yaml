@@ -1,10 +1,24 @@
-name: Push
-run-name: Push
+# Release
+#
+# This is the pipeline that will run for every release.
+# A release is a tag that starts with a "v" followed by a version number.
+# In brief, pushing a tag will run this pipeline.
+#
+# The pipeline does the following.
+# 0. Try to merge this release with next.
+# 1. Compile the source code for all environments (dev, test, prod)
+# 2. Run the linter on the source code.
+# 3. Run the entire test suite
+# 4. Compile the documentation
+# 5. Make a release on GitHub
+
+name: Release
+run-name: Release
 
 on:
-    push:
-      tags:
-        - v*
+  push:
+    tags:
+      - v*
 
 jobs:
   try_merge:

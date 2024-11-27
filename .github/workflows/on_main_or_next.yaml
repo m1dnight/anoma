@@ -1,7 +1,18 @@
-name: Push on main or next
-run-name: Push on main or next
+# Push on main or next
+#
+# This is the pipeline that will run for every push on main or next
+#
+# The pipeline does the following.
+# 1. Compile the source code for all environments (dev, test, prod)
+# 2. Run the linter on the source code.
+# 3. Run the entire test suite
 
-on: [push]
+name: Push On Main/Next
+run-name: Push On Main/Next
+
+on:
+  push:
+    branches: ["main", "next"]
 
 jobs:
   compile:

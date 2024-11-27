@@ -1,3 +1,11 @@
+# Try Merge
+#
+# I will try to merge the current branch onto the target branch.
+# If the merge fails, I error.
+#
+# I take one parameter:
+# - merge_with: The branch to merge the current branch with.
+
 name: Try Merge
 on:
   workflow_call:

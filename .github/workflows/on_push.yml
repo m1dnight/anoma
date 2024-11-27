@@ -1,6 +1,6 @@
 # Push
 #
-# This is the pipeline that will run for every pushed commit.
+# This is the pipeline that will run for every pushed commit, except for main and next.
 #
 # The pipeline does the following.
 # 1. Compile the source code for all environments (dev, test, prod)
@@ -8,7 +8,12 @@
 
 name: Push
 run-name: Push on ${{ github.head_ref }}
-on: [push]
+on:
+  push:
+    branches:
+      - "*"
+      - "!main"
+      - "!next"
 
 jobs:
   compile:

@@ -80,6 +80,6 @@ jobs:
     uses: ./.github/workflows/build_release.yaml
     with:
       mix-env: "prod"
-      elixir-version: "{{ matrix.beam_versions.elixir }}"
-      otp-version: "{{ matrix.beam_versions.otp }}"
+      elixir-version: "${{ matrix.beam_versions.elixir }}"
+      otp-version: "${{ matrix.beam_versions.otp }}"
       release_name: ${{ github.ref_name }}

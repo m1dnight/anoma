@@ -19,6 +19,12 @@ on:
       otp-version:
         required: true
         type: string
+      release_name:
+        required: true
+        type: string
+    secrets:
+      github_token:
+        required: true
 jobs:
   build_release:
     runs-on: ubuntu-latest
@@ -61,14 +67,14 @@ jobs:
             --title ${{ github.ref_name }}             \
             --repo ${{ github.repository }}
 
-        #   #---------------------------------------------------------------------------
-        #   # Publish releases
+      #---------------------------------------------------------------------------
+      # Publish releases
 
-        #   - name: publish client release
-        #     shell: bash
-        #     env:
-        #       GH_TOKEN: ${{ inputs.github_token }}
-        #     run: |
-        #       gh release upload ${{ inputs.release_name }} \
-        #       -- clobber                                   \
-        #       apps/anoma_client/anoma_client
+      - name: publish client release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.github_token }}
+        run: |
+          gh release upload ${{ inputs.release_name }} \
+          -- clobber                                   \
+          apps/anoma_client/anoma_client

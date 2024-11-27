@@ -29,10 +29,10 @@ jobs:
   compile:
     strategy:
       matrix:
-        target: [dev, test, prod]
+        mix_env: [dev, test, prod]
     uses: ./.github/workflows/compile.yaml
     with:
-      mix-env: ${{ matrix.target }}
+      mix-env: ${{ matrix.mix_env }}
       elixir-version: "1.17"
       otp-version: "27.1"
 
@@ -66,6 +66,13 @@ jobs:
 
   make_release:
     needs: [compile, lint, test, docs, try_merge]
+    strategy:
+      matrix:
+        beam_versions:
+          - otp: "25.0"
+            elixir: "1.17"
+          - otp: "26.0"
+            elixir: "1.17"
     permissions:
       contents: write
       id-token: write
@@ -73,6 +80,6 @@ jobs:
     uses: ./.github/workflows/build_release.yaml
     with:
       mix-env: "prod"
-      elixir-version: "1.17"
-      otp-version: "27.1"
+      elixir-version: "{{ matrix.beam_versions.elixir }}"
+      otp-version: "{{ matrix.beam_versions.otp }}"
       release_name: ${{ github.ref_name }}

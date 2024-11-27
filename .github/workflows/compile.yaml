@@ -23,10 +23,6 @@ jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
-      - name: print protobuf information
-        shell: bash
-        run: protoc --version
-
       - name: checkout the repository
         uses: actions/checkout@v4
 
@@ -49,6 +45,10 @@ jobs:
 
       - name: fetch elixir dependencies
         run: MIX_ENV=${{ inputs.mix-env }} mix deps.get
+
+      - name: print protobuf information
+        shell: bash
+        run: protoc --version
 
       - name: compile elixir project
         run: MIX_ENV=${{ inputs.mix-env }} mix compile

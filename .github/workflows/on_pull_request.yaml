@@ -9,7 +9,7 @@
 # 3. Run the entire test suite
 
 name: Pull Request
-run-name: PR {{ github.base_ref }}
+run-name: PR ${{ github.base_ref }}
 on:
   pull_request:
     branches: ["base"]

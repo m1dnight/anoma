@@ -9,7 +9,7 @@
 # 3. Run the entire test suite
 
 name: Pull Request
-run-name: PR '${{ github.head_ref }}'' into '${{ github.base_ref }}'
+run-name: Pull request '${{ github.head_ref }}'' into '${{ github.base_ref }}'
 on:
   pull_request:
     branches: ["base"]

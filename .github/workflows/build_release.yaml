@@ -73,5 +73,5 @@ jobs:
           GH_TOKEN: ${{ secrets.github_token }}
         run: |
           gh release upload ${{ inputs.release_name }} \
-          -- clobber                                   \
+          --clobber                                    \
           apps/anoma_client/anoma_client

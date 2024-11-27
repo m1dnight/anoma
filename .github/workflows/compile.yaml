@@ -23,6 +23,10 @@ jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
+      - name: print protobuf information
+        shell: bash
+        run: protoc --version
+
       - name: checkout the repository
         uses: actions/checkout@v4
 

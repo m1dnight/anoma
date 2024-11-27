@@ -71,8 +71,6 @@ jobs:
         beam_versions:
           - otp: "27.1"
             elixir: "1.17"
-          - otp: "26.2.5.5"
-            elixir: "1.17"
     permissions:
       contents: write
       id-token: write

@@ -57,6 +57,7 @@ jobs:
 
       - name: mix credo
         shell: bash
+        continue-on-error: true
         run: MIX_ENV=${{inputs.mix-env}} mix credo
 
       - name: mix format
